@@ -2,12 +2,15 @@
 using Xunit;
 using System.Collections.Generic;
 
+
 namespace ChallengeSets.Tests
 {
     public class ChallengeSet02Tests
     {
         [Fact]
-        public void CharacterIsALetter()
+        public void CharacterALetter()
+        
+
         {
             // Arrange
             ChallengeSet02 challenger = new ChallengeSet02();
@@ -247,6 +250,59 @@ namespace ChallengeSets.Tests
 
             // Assert
             Assert.Equal(expected, actual);
+        }
+    }
+
+    internal class ChallengeSet02
+    {
+        internal bool CharacterIsALetter(char letter)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool CountOfElementsIsEven(string[] strings)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal double CountOfPositiveOddsBelowNumber(int number)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int GetLengthOfShortestString(string str1, string str2)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool IsNumberEven(int number)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool IsNumberOdd(int number)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal bool IsSumOdd(List<int> numbersList)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int Sum(int[] numbers)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int SumEvens(int[] numbers)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal double SumOfMinAndMax(IEnumerable<double> numbers)
+        {
+            throw new NotImplementedException();
         }
     }
 }
