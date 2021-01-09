@@ -60,34 +60,111 @@ namespace ChallengeSets
 
         public int IndexOfLastUniqueLetter(string str)
         {
-            throw new NotImplementedException();
+            // throw new NotImplementedException();
+            if (str.Length == 1)
             {
-                return false;
+                return 0;
+            }
+            if (str == "")
+            {
+                return -1;
             }
 
-            var limit = Math.Ceiling(Math.Sqrt(num));
+            var counter = 0;
 
-            for (var i = 2; i <= limit; ++i)
+            var answer = 0;
+
+            var count = new int[str.Length];
+
+            for (int i = 0; i < str.Length; i++)
             {
-                if (num % i == 0)
+                foreach (var lett in str)
                 {
-                    return false;
+                    if (str[i] == lett)
+                    {
+                        count[i]++;
+                    }
                 }
-
             }
 
-            return true;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (count[i] == 1)
+                {
+                    answer = i;
+                }
+                else if (count[i] > 1)
+                {
+                    counter++;
+                }
+            }
+
+            if (counter == str.Length)
+            {
+                return -1;
+            }
+
+            return answer;
+
         }
-    }
 
         public int MaxConsecutiveCount(int[] numbers)
         {
-            throw new NotImplementedException();
-        }
+            var totalCount = 0;
 
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                var currentCount = 1;
+
+                for (int j = i + 1; j < numbers.Length; j++)
+                {
+                    if (numbers[i] != numbers[j])
+                    {
+                        break;
+                    }
+
+                    currentCount++;
+
+                }
+
+                if (currentCount > totalCount)
+                {
+                    totalCount = currentCount;
+                }
+            }
+
+            return totalCount;
+
+        }
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
-            throw new NotImplementedException();
+            List<double> nthElement = new List<double>();
+
+            double[] nullCheck = new double[0];
+
+            if (elements == null)
+            {
+                return nullCheck;
+            }
+
+            for (int i = 0; i < elements.Count; i++)
+            {
+                if (elements[i] % n == 0)
+                {
+                    nthElement.Add(elements[i]);
+                }
+
+                if (n < 0 || n > elements.Count)
+                {
+                    nthElement.Clear();
+                }
+            }
+
+            double[] finalArray = nthElement.ToArray();
+
+            return finalArray;
         }
+
+
     }
 }
